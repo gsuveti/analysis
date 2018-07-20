@@ -23,7 +23,8 @@ import {FormsModule} from "@angular/forms";
 import {FundListComponent} from './fund-list/fund-list.component';
 import {FundDetailComponent} from './fund-detail/fund-detail.component';
 import {ChartModule} from 'angular2-chartjs';
-import { AafFundListComponent } from './aaf-fund-list/aaf-fund-list.component';
+import {AafFundListComponent} from './aaf-fund-list/aaf-fund-list.component';
+import {TransferHttpCacheModule} from '@nguniversal/common';
 
 
 @NgModule({
@@ -34,8 +35,9 @@ import { AafFundListComponent } from './aaf-fund-list/aaf-fund-list.component';
     AafFundListComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({appId: 'my-app'}),
     AppRoutingModule,
+    TransferHttpCacheModule,
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
