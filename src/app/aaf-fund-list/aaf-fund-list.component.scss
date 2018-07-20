@@ -1,0 +1,55 @@
+/* Structure */
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  margin: 32px;
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-table {
+  overflow: auto;
+}
+
+.mat-column-name {
+  flex: 0 0 250px;
+}
+
+.filters {
+  margin: 32px;
+  display: flex;
+  > * {
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+  }
+
+}
+
+.mat-h2 {
+  padding: 24px 24px 0;
+}
+
+.button-row {
+  padding: 24px 24px 0;
+}
+
+.mat-row {
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0, 0, 0, .12);
+  }
+}
+
+.mat-column-Denumire-fond{
+  flex: 0 0 300px;
+}

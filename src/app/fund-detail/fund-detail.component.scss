@@ -1,0 +1,26 @@
+.mat-divider {
+  margin: 32px 0;
+}
+
+::ng-deep {
+  .mat-card-header-text {
+    margin: 0 !important;
+  }
+  .mat-list-item{
+    height: 32px!important;
+    .mat-list-item-content{
+      padding: 0!important;
+    }
+  }
+}
+.two-cols-div {
+  display: flex;
+  > * {
+    display: flex;
+    flex: 1;
+    &:first-child{
+      font-weight: 700;
+    }
+  }
+}
+

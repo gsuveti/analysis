@@ -1,0 +1,117 @@
+<div class="button-row mt-xl">
+  <button mat-raised-button color="primary">Fonduri de investitii</button>
+  <button mat-button>Fonduri straine</button>
+  <button mat-button>Fonduri de pensie</button>
+</div>
+<h1 class="mat-h2">CHEI DE CAUTARE FONDURI</h1>
+<div class="filters">
+  <mat-form-field>
+    <mat-select placeholder="Asset manager">
+      <mat-option *ngFor="let asset of assetMangerOptions" [value]="asset.value">
+        {{ asset.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Produs">
+      <mat-option *ngFor="let option of productOptions" [value]="option.value">
+        {{ option.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Tip fond">
+      <mat-option *ngFor="let option of typeOptions" [value]="option.value">
+        {{ option.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<h1 class="mat-h2">LISTA SI PERFORMANTA FONDURI</h1>
+<div class="example-container mat-elevation-z8">
+  <div class="example-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filtrare">
+    </mat-form-field>
+  </div>
+
+  <mat-table #table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Nume</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="data">
+      <mat-header-cell *matHeaderCellDef> Data</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.data}}</mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="VUAN">
+      <mat-header-cell *matHeaderCellDef> VUAN</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element['VUAN']}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="1D">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> 1D</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element['1D']}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="1M">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> 1M</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element['1M']}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="3M">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> 3M</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element['3M']}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="12M">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> 12M</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element['12M']}}</mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="36M">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> 36M</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element['36M']}}</mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="60M">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> 60M</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element['60M']}}</mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="120M">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> 120M</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element['120M']}}</mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="YTD">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> YTD</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element['YTD']}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="SINCEINCEPTION">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> SINCEINCEPTION</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element['SINCEINCEPTION']}}</mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="SRRI">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> SRRI</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element['SRRI']}}</mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="select(row)"></mat-row>
+  </mat-table>
+
+</div>
